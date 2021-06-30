@@ -1,0 +1,27 @@
+ng g module orders --route orders --module app.module
+Preloading modules
+Preloading modules improves UX by loading parts of your application in the background so users don't have to wait for the elements to download when they activate a route.
+
+NgModules, whether or not they are immediately necessary. For large applications with lots of routes, consider lazy loading—a design pattern that loads NgModules as needed. Lazy loading helps keep initial bundle sizes smaller, which in turn helps decrease load times.
+------------------------------------------------------------
+state :representation of an application
+user information
+data from server
+view/ui state
+information that our application tracks
+
+state read only immutable
+
+only way to change the state tree by dispatching an action
+
+all changes are made by pure functions called reducers
+
+ngrx=redux+rxjs+angular
+
+
+@ngrx/store:the core library
+@ngrx/effects:used to handle side effects such as communication with a back-end server
+@ngrx/router-store:connect the angular router to ngrx store
+@ngrx/entity:used to manage record collections
+@ngrx/store-devtools:allows us to debug and inspect the application
+@ngrx/schematics:library that provides cli commands to generate files
