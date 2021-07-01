@@ -23,7 +23,7 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
     AppRoutingModule,
     HttpClientModule,
     StoreDevtoolsModule.instrument(),
-    StoreModule.forRoot([]),
+    StoreModule.forRoot(reducers),
     EffectsModule.forRoot([])
   ],
   providers: [],

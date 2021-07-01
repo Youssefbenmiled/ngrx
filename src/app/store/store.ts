@@ -1,5 +1,6 @@
 import { ActionReducerMap } from '@ngrx/store';
 import { customerReducer, CustomerState  } from '../customers/state/customer.reducer';
+import { customerReducerEntity, CustomerStateEntity } from '../customers/state/customerEntity.reducer';
 import { Counter, counterReducer } from './reducers/counter.reducer';
 import { ToDo, toDoReducer } from './reducers/todos.reducer';
 
@@ -7,7 +8,7 @@ import { ToDo, toDoReducer } from './reducers/todos.reducer';
 export interface StoreInterface {
   counter: Counter;
   todos:ToDo[],
-  customers:CustomerState
+  customers:CustomerStateEntity
 }
 
 // reducer common action (deprecated)
@@ -19,5 +20,6 @@ export interface CustomAction {
 export const reducers: ActionReducerMap<StoreInterface> = {
   counter: counterReducer,
   todos: toDoReducer,
-  customers: customerReducer
+  customers: customerReducerEntity,
+
 };

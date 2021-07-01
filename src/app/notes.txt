@@ -25,3 +25,16 @@ ngrx=redux+rxjs+angular
 @ngrx/entity:used to manage record collections
 @ngrx/store-devtools:allows us to debug and inspect the application
 @ngrx/schematics:library that provides cli commands to generate files
+
+entity:
+-manage collections
+-Ids and entities
+
+
+
+
+
+
+
+
+

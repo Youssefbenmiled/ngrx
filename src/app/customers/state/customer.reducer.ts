@@ -31,7 +31,7 @@
 import { Customer } from "../customer.model";
 import * as CustomerActions from "./customer.actions"
 import { createFeatureSelector,createSelector } from "@ngrx/store";
-
+import { EntityState,EntityAdapter,createEntityAdapter } from "@ngrx/entity";
 export interface CustomerState{
   customers:Customer[]
   loading:boolean
@@ -39,16 +39,9 @@ export interface CustomerState{
   error:string
 }
 
+
 const initialState:CustomerState={
-customers:[
-  {
-    id:0,
-    name:'',
-    phone:'',
-    address:'',
-    membership:'',
-  }
-],
+customers:[],
 loading:false,
 loaded:false,
 error:''
@@ -57,14 +50,16 @@ error:''
 export function customerReducer(state=initialState,action:CustomerActions.Actions):CustomerState {
 
   switch (action.type) {
-    case CustomerActions.CustomerActionTypes.LOAD_CUSTOMERS:
-      return{...state,loading:true,loaded:false}
+    // case CustomerActions.CustomerActionTypes.LOAD_CUSTOMERS:
+    //   return{...state,loading:true,loaded:false}
 
     case  CustomerActions.CustomerActionTypes.LOAD_CUSTOMERS_SUCCESS:
         return{...state,customers:action.payload,loading:false,loaded:true}
 
     case  CustomerActions.CustomerActionTypes.LOAD_CUSTOMERS_FAIL:
         return{...state,loading:false,loaded:true,error:action.payload}
+
+
 
     default:
       return state;
@@ -74,9 +69,15 @@ export function customerReducer(state=initialState,action:CustomerActions.Action
 
 const getCustomerFeatureState=createFeatureSelector<CustomerState>("customers");
 
-export const getCustomers=createSelector(getCustomerFeatureState,
+export const getCustomers=createSelector(
+  getCustomerFeatureState,
   (state:CustomerState)=> state.customers
   )
+
+  export const getError = createSelector(
+    getCustomerFeatureState,
+    (state: CustomerState) => state.error
+  );
 
 
 export const getCustomersLoading=createSelector(getCustomerFeatureState,
