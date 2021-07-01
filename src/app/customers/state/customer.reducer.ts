@@ -31,7 +31,6 @@
 import { Customer } from "../customer.model";
 import * as CustomerActions from "./customer.actions"
 import { createFeatureSelector,createSelector } from "@ngrx/store";
-import { EntityState,EntityAdapter,createEntityAdapter } from "@ngrx/entity";
 export interface CustomerState{
   customers:Customer[]
   loading:boolean
@@ -72,7 +71,7 @@ const getCustomerFeatureState=createFeatureSelector<CustomerState>("customers");
 export const getCustomers=createSelector(
   getCustomerFeatureState,
   (state:CustomerState)=> state.customers
-  )
+  );
 
   export const getError = createSelector(
     getCustomerFeatureState,

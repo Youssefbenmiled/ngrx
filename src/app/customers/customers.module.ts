@@ -13,6 +13,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CustomerEffect } from './state/customer.effects';
 import { customerReducerEntity } from './state/customerEntity.reducer';
 import { customerReducer } from './state/customer.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 const routes:Routes=[
   {
@@ -33,6 +34,7 @@ const routes:Routes=[
     ReactiveFormsModule,
     StoreModule.forFeature("customers",customerReducerEntity),
     EffectsModule.forFeature([CustomerEffect]),
+    StoreDevtoolsModule.instrument()
 
   ]
 })

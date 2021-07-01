@@ -13,9 +13,7 @@ import { Action } from "@ngrx/store";
 })
 export class CustomerEffect{
 
-  constructor(private effectAdctions$:Actions,private customerService:CustomerService){
-
-  }
+  constructor(private effectAdctions$:Actions,private customerService:CustomerService){}
 
 
 

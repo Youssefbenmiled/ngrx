@@ -9,7 +9,7 @@ export interface CustomerStateEntity extends EntityState<Customer> {
   loaded: boolean;
   error: string;
   entities: {};
-  ids: [];
+  ids: number[];
 }
 
 const defaultCustomer: CustomerStateEntity = {
@@ -26,6 +26,8 @@ const customerAdapter: EntityAdapter<Customer> =
 
 const initialState: CustomerStateEntity =
   customerAdapter.getInitialState(defaultCustomer);
+
+
 
 export function customerReducerEntity(
   state = initialState,
@@ -134,10 +136,21 @@ export const getCurrentCustomer=createSelector(
   getCustomerFeatureState,
   getCurrentCustomerId,
   (state)=>{
-    console.log(state.entities)
+    console.log(state.entities[state.selectedCustomerId])
     return state.entities[state.selectedCustomerId]
   }
 )
+
+
+
+
+
+
+
+
+
+
+
 
 interface A {
   a: number;

@@ -24,7 +24,7 @@ export class CustomerListComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new customerActions.LoadCustomers());
 
-    this.customers$ = this.store.pipe(select(customerReducerEntity.getCustomers));
+    this.customers$ = this.store.select(customerReducerEntity.getCustomers);
     this.error$ = this.store.pipe(select(customerReducerEntity.getError));
   }
 

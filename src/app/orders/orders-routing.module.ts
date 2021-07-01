@@ -6,7 +6,10 @@ import { OrdersComponent } from './orders.component';
 const routes: Routes = [{ path: '', component: OrdersComponent }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})],
+  imports: [RouterModule.forChild(routes,
+    // {preloadingStrategy:PreloadAllModules}
+    )
+  ],
   exports: [RouterModule]
 })
 export class OrdersRoutingModule { }

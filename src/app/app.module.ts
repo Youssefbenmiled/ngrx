@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([])
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
