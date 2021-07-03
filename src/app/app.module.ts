@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { AuthGuard } from './auth.guard';
+import { NgrxAutoEntityModule } from '@briebug/ngrx-auto-entity';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,17 @@ import { AuthGuard } from './auth.guard';
     AppRoutingModule,
     HttpClientModule,
     StoreDevtoolsModule.instrument(),
-    StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([])
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: false,
+      },
+    }),
+    // StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([]),
+    NgrxAutoEntityModule.forRoot()
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

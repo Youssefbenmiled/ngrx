@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 
 const routes:Routes=[
   {
-    path:'',
+    path:'home',
     component:HomeComponent
   },
 
@@ -19,6 +19,10 @@ const routes:Routes=[
   {
     path: 'orders',
     loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule)
+  },
+  {
+    path: 'users',
+    loadChildren: () => import('./users/user.module').then(m => m.UsersModule)
   },
 
   {

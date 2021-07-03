@@ -30,8 +30,11 @@ export class AppComponent implements OnInit {
 
     // this.opService.handleApi()
     // this.maxService.firstMethod()
-    this.maxService.frthMethod()
-    this.maxService.subjectBehaviour()
+    // this.maxService.frthMethod()
+    // this.maxService.subjectBehaviour()
+
+
+
     // const obj = {
     //   name: 'ali',
     //   age: 20,
@@ -56,11 +59,11 @@ export class AppComponent implements OnInit {
       },
     }
 
-    this.rxService.getInfo().subscribe(
-      data=>console.log(data),
-      error=>console.log(error),
-      ()=>console.log('Completed')
-    )
+    // this.rxService.getInfo().subscribe(
+    //   data=>console.log(data),
+    //   error=>console.log(error),
+    //   ()=>console.log('Completed')
+    // )
 
     // this.rxService.getInfo2().subscribe(
     //  observer
