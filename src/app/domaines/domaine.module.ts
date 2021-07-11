@@ -9,6 +9,7 @@ import {  domaineReducer, DOMAINE_CONST } from './domaine.state';
 import { Domaine } from './domaine.model';
 import { DomaineEntityService } from './domaine.service';
 import { DomaineFacade } from './domaine.facade';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 const routes:Routes=[
   {
@@ -23,14 +24,15 @@ const routes:Routes=[
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    FormsModule,
 
     StoreModule.forFeature(DOMAINE_CONST,domaineReducer),
     NgrxAutoEntityModule.forFeature(),
   ],
   providers:[
     {provide:Domaine,useClass:DomaineEntityService},
-    DomaineEntityService,
-    DomaineFacade
+    // DomaineEntityService,
+    // DomaineFacade
   ]
 })
 export class DomaineModule { }

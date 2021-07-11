@@ -4,7 +4,7 @@ import { SharedEntityService } from "../shared-service.service";
 
 
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class DomaineEntityService extends SharedEntityService {
   constructor(http:HttpClient){
     super(http)

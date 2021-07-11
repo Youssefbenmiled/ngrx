@@ -5,5 +5,4 @@ import { Entity, Key } from "@briebug/ngrx-auto-entity"
 export class Domaine{
   @Key id_domaine:number
   libelle_domaine:string
-  // constructor(lib:string){this.libelle_domaine=lib}
 }

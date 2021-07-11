@@ -27,15 +27,15 @@ export class SharedEntityService  implements IAutoEntityService<any> {
 
   create(entityInfo: IEntityInfo, entity: any): Observable<any> {
     return this.http.post<any>(
-      // `${environment.rootUrl}/${entityInfo.modelName}`,
-      `${environment.rootUrl}`,
+      `${environment.rootUrl}/${entityInfo.modelName}/add2`,
+      // `${environment.rootUrl}`,
       entity
     );
   }
 
   update(entityInfo: IEntityInfo, entity: any): Observable<any> {
     return this.http.patch<any>(
-      `${environment.rootUrl}/${entityInfo.modelName}/${entity.id}`,
+      `${environment.rootUrl}/${entityInfo.modelName}/update2`,
        entity
     );
   }
