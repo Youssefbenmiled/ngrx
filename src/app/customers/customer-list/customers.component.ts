@@ -5,7 +5,7 @@ import { Store, select } from "@ngrx/store";
 import { Observable } from "rxjs";
 
 import * as customerActions from "../state/customer.actions";
-import * as customerReducerEntity from "../state/customerEntity.reducer";
+import * as customerSelectorsEntity from "../state/customer.selectors";
 import { Customer } from "../customer.model";
 import { StoreInterface } from "src/app/store/store";
 
@@ -24,8 +24,8 @@ export class CustomerListComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new customerActions.LoadCustomers());
 
-    this.customers$ = this.store.select(customerReducerEntity.getCustomers);
-    this.error$ = this.store.pipe(select(customerReducerEntity.getError));
+    this.customers$ = this.store.select(customerSelectorsEntity.getCustomers);
+    this.error$ = this.store.pipe(select(customerSelectorsEntity.getError));
   }
 
   deleteCustomer(customer: Customer) {

@@ -12,14 +12,14 @@ export interface IEntityUser {
 
 export const USER_CONST='USER'
 
-export const siteState = createFeatureSelector<IEntityUser>(
+export const userFeatureSelector = createFeatureSelector<IEntityUser>(
   USER_CONST
-);
+  );
 
 export const { initialState: initialUserState, selectors, facade: UserFacadeBase } = buildFeatureState(
   User,
   USER_CONST,
-  siteState
+  userFeatureSelector
 );
 
 export function userReducer(state=initialUserState):IEntityState<User> {

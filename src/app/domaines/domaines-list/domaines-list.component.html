@@ -1,0 +1,28 @@
+<h3>Domaines</h3>
+<button (click)=addDomaine()>Ajouter</button>
+<table class="table table-hover">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">#</th>
+      <th scope="col">Libelle</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr>
+      <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
+    </tr> -->
+    <tr>
+    <tr *ngFor="let domaine of (domaines$)">
+      <th scope="row">{{domaine.id_domaine}}</th>
+      <td>{{domaine.libelle_domaine}}</td>
+
+      <th>
+        <button (click)=editDomaine(domaine)>edit</button>
+        <br>
+        <button (click)=deleteDomaine(domaine)>delete</button>
+      </th>
+    </tr>
+  </tbody>
+</table>

@@ -12,6 +12,10 @@ export interface CustomerStateEntity extends EntityState<Customer> {
   ids: number[];
 }
 
+
+
+
+
 const defaultCustomer: CustomerStateEntity = {
   selectedCustomerId: null,
   loading: false,
@@ -21,12 +25,10 @@ const defaultCustomer: CustomerStateEntity = {
   ids: [],
 };
 
-const customerAdapter: EntityAdapter<Customer> =
-  createEntityAdapter<Customer>();
 
-const initialState: CustomerStateEntity =
-  customerAdapter.getInitialState(defaultCustomer);
+export const customerAdapter: EntityAdapter<Customer> =createEntityAdapter<Customer>();
 
+const initialState: CustomerStateEntity = customerAdapter.getInitialState(defaultCustomer);
 
 
 export function customerReducerEntity(
@@ -99,47 +101,8 @@ export function customerReducerEntity(
   }
 }
 
-const getCustomerFeatureState = createFeatureSelector<CustomerStateEntity>('customers');
+export const getCustomerFeatureState = createFeatureSelector<CustomerStateEntity>('customers');// initial state is CustomerStateEntity
 
-export const getCustomers = createSelector(
-  getCustomerFeatureState,
-  customerAdapter.getSelectors().selectAll
-);
-
-
-export const getError = createSelector(
-  getCustomerFeatureState,
-  (state: CustomerStateEntity) => state.error
-);
-
-export const getCustomersLoading = createSelector(
-  getCustomerFeatureState,
-  (state: CustomerStateEntity) => state.loading
-);
-
-export const getCustomersLoaded = createSelector(
-  getCustomerFeatureState,
-  (state: CustomerStateEntity) => state.loaded
-);
-export const getCustomersError = createSelector(
-  getCustomerFeatureState,
-  (state: CustomerStateEntity) => state.error
-);
-
-//------current customer id----------------//
-export const getCurrentCustomerId=createSelector(
-  getCustomerFeatureState,
-  (state:CustomerStateEntity)=>state.selectedCustomerId
-)
-
-export const getCurrentCustomer=createSelector(
-  getCustomerFeatureState,
-  getCurrentCustomerId,
-  (state)=>{
-    console.log(state.entities[state.selectedCustomerId])
-    return state.entities[state.selectedCustomerId]
-  }
-)
 
 
 
@@ -175,3 +138,5 @@ const x: b = {
   c: 0,
   d: 0,
 };
+
+

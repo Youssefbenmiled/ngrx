@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
+  rootUrl:'http://localhost:5010'
   // rootUrl:'https://jsonplaceholder.typicode.com/users',
-  rootUrl:'../assets/data.json'
+  // rootUrl:'../assets/data.json'
 };
 
 /*

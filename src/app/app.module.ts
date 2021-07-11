@@ -11,8 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
-import { AuthGuard } from './auth.guard';
 import { NgrxAutoEntityModule } from '@briebug/ngrx-auto-entity';
+import { AuthGuard } from './auth-guard/auth.guard';
 
 @NgModule({
   declarations: [

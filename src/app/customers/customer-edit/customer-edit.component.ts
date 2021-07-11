@@ -5,7 +5,7 @@ import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 
 import * as customerActions from "../state/customer.actions";
-import * as customerEnitiyReducer from "../state/customerEntity.reducer";
+import * as customerSelectorsEntity from "../state/customer.selectors";
 import { Customer } from "../customer.model";
 import { StoreInterface } from 'src/app/store/store';
 
@@ -36,7 +36,7 @@ export class CustomerEditComponent implements OnInit {
 
   updateCustomer() {
     const customer$: Observable<Customer> = this.store.select(
-      customerEnitiyReducer.getCurrentCustomer
+      customerSelectorsEntity.getCurrentCustomer
     )
 
     customer$.subscribe(currentCustomer => {

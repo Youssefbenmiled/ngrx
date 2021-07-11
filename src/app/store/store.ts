@@ -6,13 +6,16 @@ import { userReducer } from '../users/user.state';
 import { User } from '../users/user.model';
 import { Counter, counterReducer } from './reducers/counter.reducer';
 import { ToDo, toDoReducer } from './reducers/todos.reducer';
+import { Domaine } from '../domaines/domaine.model';
+import { domaineReducer } from '../domaines/domaine.state';
 
 //needed in app.module and component's store type
 export interface StoreInterface {
   counter: Counter;
   todos:ToDo[],
   customers:CustomerStateEntity,
-  user:IEntityState<User>;
+  user:IEntityState<User>,
+  domaine:IEntityState<Domaine>
 }
 
 // reducer common action (deprecated)
@@ -25,6 +28,7 @@ export const reducers: ActionReducerMap<StoreInterface> = {
   counter: counterReducer,
   todos: toDoReducer,
   customers: customerReducerEntity,
-  user:userReducer
+  user:userReducer,
+  domaine:domaineReducer
 
 };

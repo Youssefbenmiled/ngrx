@@ -23,7 +23,7 @@ export class UserListComponent implements OnInit {
   }
 
   addUser(){
-    this.userFacade.create(new User())
+    this.userFacade.update(new User())
   }
 
 
