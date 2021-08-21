@@ -70,7 +70,7 @@ subjectMethod(){
   const subject=new Subject()
   subject.subscribe(this.observer)
   subject.next("Next Subject")
-  subject.error(new Error('Error occured'))
+  subject.error(new Error('Error occurred'))
 }
 
 frthMethod(){

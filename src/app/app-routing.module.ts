@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AuthGuard } from './auth-guard/auth.guard';
 import { HomeComponent } from './home/home.component';
+import { SocketComponent } from './socket/socket.component';
 
 
 const routes:Routes=[
@@ -17,7 +18,8 @@ const routes:Routes=[
   {
     path:'customers',
     loadChildren:()=>import('./customers/customers.module').then(module=>module.CustomersModule),
-    canActivate:[AuthGuard]
+    canActivate:[AuthGuard],
+    data:{source:'sourceCustomers'}
   },
 
   {
@@ -31,6 +33,10 @@ const routes:Routes=[
   {
     path:'domaines',
     loadChildren:()=> import('./domaines/domaine.module').then(module=>module.DomaineModule)
+  },
+  {
+    path: 'socket',
+    component:SocketComponent
   },
 
   {

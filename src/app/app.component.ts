@@ -6,6 +6,8 @@ import { OperatorsService } from './RxJs/operators.service';
 import { DecrementAction, IncrementAction } from './store/actions/counter.action';
 import {  StoreInterface } from './store/store';
 import { MaxService } from './RxJs/max.service';
+import { Observable } from 'rxjs';
+import { getTitle } from './store/reducers/todos.reducer';
 
 @Component({
   selector: 'app-root',
@@ -14,13 +16,14 @@ import { MaxService } from './RxJs/max.service';
 })
 export class AppComponent implements OnInit {
   counter:number;
-
+  title:Observable<any>
   constructor(
     // private store:Store<StoreInterface>,
     private rxService:TryService,
     private opService:OperatorsService,
+    store:Store<StoreInterface>,
     private maxService:MaxService){
-    // this.store.subscribe(data=>console.log(data))
+    (store.select(getTitle)).subscribe(title=>console.log(title))
   }
 
   ngOnInit(): void {

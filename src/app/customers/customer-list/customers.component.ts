@@ -8,6 +8,7 @@ import * as customerActions from "../state/customer.actions";
 import * as customerSelectorsEntity from "../state/customer.selectors";
 import { Customer } from "../customer.model";
 import { StoreInterface } from "src/app/store/store";
+import { ActivatedRoute, Router } from "@angular/router";
 
 
 @Component({
@@ -19,13 +20,15 @@ export class CustomerListComponent implements OnInit {
   customers$: Observable<Customer[]>;
   error$: Observable<String>;
 
-  constructor(private store: Store<StoreInterface>) {}
+  constructor(private store: Store<StoreInterface>,private actifRoute:ActivatedRoute,private router:Router) {}
 
   ngOnInit() {
     this.store.dispatch(new customerActions.LoadCustomers());
 
     this.customers$ = this.store.select(customerSelectorsEntity.getCustomers);
     this.error$ = this.store.pipe(select(customerSelectorsEntity.getError));
+    this.actifRoute.data.subscribe(data=>console.log(data.source));
+
   }
 
   deleteCustomer(customer: Customer) {

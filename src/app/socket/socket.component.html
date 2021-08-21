@@ -1,0 +1,20 @@
+<p>socket works!</p>
+
+<div>
+  <input type="text" placeholder="message"  #text/>
+</div>
+<input type="text" placeholder="room"  #room/>
+<div>
+
+  <button (click)="send(text,room)" class="btn btn-primary w-20">Send</button>
+  <button (click)="join(room)" class="btn btn-success w-40">Join</button>
+</div>
+
+<div>
+
+  <button (click)="connect()" class="btn btn-primary w-20">Connect</button>
+  <button (click)="disconnect()" class="btn btn-success w-40">Disconnect</button>
+</div>
+
+
+<h3>{{this.msg}}</h3>

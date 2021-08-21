@@ -4,7 +4,6 @@ import { IAutoEntityService, IEntityInfo } from '@briebug/ngrx-auto-entity';
 import { Observable,of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Domaine } from './domaines/domaine.model';
 
 @Injectable({
   providedIn: 'root'

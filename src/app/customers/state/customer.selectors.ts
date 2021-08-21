@@ -1,4 +1,5 @@
 import { createSelector } from "@ngrx/store";
+import { StoreInterface } from "src/app/store/store";
 import { customerAdapter, CustomerStateEntity, getCustomerFeatureState } from "./customerEntity.reducer";
 
 export const getCustomers = createSelector(
@@ -40,3 +41,7 @@ export const getCurrentCustomer=createSelector(
     return state.entities[state.selectedCustomerId]
   }
 )
+
+
+export const selectApp = (state:StoreInterface) => state.customers;
+export const getCustomers_=createSelector(selectApp,(state)=> state.entities)

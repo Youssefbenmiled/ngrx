@@ -1,5 +1,6 @@
+import { createSelector } from "@ngrx/store"
 import { FAILURE, SUCCESS } from "../actions/todos.action"
-import { CustomAction } from "../store"
+import { CustomAction, StoreInterface } from "../store"
 
 export interface ToDo{
   userId:number,
@@ -10,7 +11,7 @@ export interface ToDo{
 const initialState:ToDo[]=[{
 userId:-1,
 id:-1,
-title:'',
+title:'abcd',
 completed:false
 }
 ]
@@ -31,3 +32,7 @@ export function toDoReducer(state=initialState,action:CustomAction){
   }
 
 }
+
+
+export const selectorApp=(state:StoreInterface)=>state.todos;
+export const getTitle=createSelector(selectorApp,(state)=>state[0].title);

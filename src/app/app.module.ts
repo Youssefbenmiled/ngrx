@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { NgrxAutoEntityModule } from '@briebug/ngrx-auto-entity';
 import { AuthGuard } from './auth-guard/auth.guard';
+import { SocketComponent } from './socket/socket.component';
 
 
 
@@ -21,6 +22,7 @@ import { AuthGuard } from './auth-guard/auth.guard';
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    SocketComponent,
   ],
   imports: [
     BrowserModule,

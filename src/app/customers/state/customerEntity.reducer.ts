@@ -1,6 +1,6 @@
 import { Customer } from '../customer.model';
 import * as CustomerActions from './customer.actions';
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { createFeatureSelector } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 export interface CustomerStateEntity extends EntityState<Customer> {
@@ -102,15 +102,6 @@ export function customerReducerEntity(
 }
 
 export const getCustomerFeatureState = createFeatureSelector<CustomerStateEntity>('customers');// initial state is CustomerStateEntity
-
-
-
-
-
-
-
-
-
 
 
 
