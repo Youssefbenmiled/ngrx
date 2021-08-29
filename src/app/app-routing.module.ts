@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AuthGuard } from './auth-guard/auth.guard';
+import { ChatApp1Component } from './chat-app1/chat-app1.component';
 import { HomeComponent } from './home/home.component';
 import { SocketComponent } from './socket/socket.component';
 
@@ -37,6 +38,10 @@ const routes:Routes=[
   {
     path: 'socket',
     component:SocketComponent
+  },
+  {
+    path: 'chat-app1',
+    component:ChatApp1Component
   },
 
   {

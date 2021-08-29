@@ -89,3 +89,23 @@ export const getCustomersLoading=createSelector(getCustomerFeatureState,
     export const getCustomersError=createSelector(getCustomerFeatureState,
       (state:CustomerState)=> state.error
       )
+ interface A{
+  b:string;
+  onUp():number
+}
+
+ class A{
+  b:string;
+  onUp():number{
+    return 0
+  }
+  constructor(bs:string) {this.b=bs}
+}
+class X extends A{
+ constructor(bs:string){
+   super(bs);
+
+ }
+
+
+}
