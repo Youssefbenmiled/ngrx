@@ -20,7 +20,7 @@ export class ChatApp1Component implements OnInit {
 
 
     this.socket.on('connect',()=>{//tnajem tna7eha
-    this.socket.emit('create-join-room',this.room,(roomName)=>this.conversation.push(`You joined on room ${roomName}`))
+    this.socket.emit('join-room',this.room,(roomName)=>this.conversation.push(`You joined on room ${roomName}`))
 
 
 

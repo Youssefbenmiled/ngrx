@@ -14,13 +14,12 @@ export class RoomComponent implements OnInit {
 
   ngOnInit(): void {
     this.socket.on('connect',()=>{
-
+      this.socket.on('room-created',roomName=>this.rooms.push(roomName))
     })
   }
 
   createRoom(room:HTMLInputElement){
-    this.rooms.push(room.value)
-
+    this.socket.emit('create-room',room.value)
     room.value=''
   }
 
