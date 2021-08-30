@@ -14,8 +14,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { NgrxAutoEntityModule } from '@briebug/ngrx-auto-entity';
 import { AuthGuard } from './auth-guard/auth.guard';
-import { SocketComponent } from './socket/socket.component';
-import { ChatApp1Component } from './chat-app1/chat-app1.component';
+import { ChatApp1Component } from './about-chat/chat-app1/chat-app1.component';
+import { RoomComponent } from './about-chat/room/room.component';
+import { SocketComponent } from './about-chat/socket/socket.component';
 
 
 
@@ -26,6 +27,7 @@ import { ChatApp1Component } from './chat-app1/chat-app1.component';
     NavbarComponent,
     SocketComponent,
     ChatApp1Component,
+    RoomComponent,
   ],
   imports: [
     BrowserModule,

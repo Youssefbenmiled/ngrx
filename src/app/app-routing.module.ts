@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AuthGuard } from './auth-guard/auth.guard';
-import { ChatApp1Component } from './chat-app1/chat-app1.component';
+import { ChatApp1Component } from './about-chat/chat-app1/chat-app1.component';
 import { HomeComponent } from './home/home.component';
-import { SocketComponent } from './socket/socket.component';
+import { SocketComponent } from './about-chat/socket/socket.component';
+import { RoomComponent } from './about-chat/room/room.component';
 
 
 const routes:Routes=[
@@ -40,8 +41,12 @@ const routes:Routes=[
     component:SocketComponent
   },
   {
-    path: 'chat-app1',
+    path: 'chat-app/:id',
     component:ChatApp1Component
+  },
+  {
+    path: 'rooms',
+    component:RoomComponent
   },
 
   {

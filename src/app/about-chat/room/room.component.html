@@ -1,0 +1,13 @@
+
+
+<input type="text" name="room-name" placeholder="enter room name" #room />
+<button type="button" (click)="createRoom(room)" class="btn btn-primary">Create room</button>
+
+
+<div>
+  <ul *ngFor="let room of rooms;let i = index">
+    <a [routerLink]="['/chat-app',room]">
+        <li>{{room}}</li>
+    </a>
+  </ul>
+</div>

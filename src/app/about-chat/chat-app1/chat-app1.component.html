@@ -3,4 +3,7 @@
   <div class="input-group-append">
     <button class="btn btn-outline-primary" (click)="sendMessage(msg)" type="button">Send</button>
   </div>
+  <ul *ngFor="let c of this.conversation">
+    <li>{{c}}</li>
+  </ul>
 </div>
